@@ -1,0 +1,50 @@
+## Steps to copy keymap to shared location:
+
+# Gives you root:
+
+sudo -i
+
+
+# cd back to the driver folder
+
+cd /home/<YOUR_USER_NAME>/beepberry-keyboard-driver
+
+
+# Copy keymap to shared location
+
+mkdir -p /usr/share/keymaps/
+cp ./beepy-kbd.map /usr/share/keymaps/
+chmod 644 /usr/share/keymaps/beepy-kbd.map
+
+
+# copy init.d file
+
+cp ./init/S01beepykbd /etc/init.d/S01beepykbd
+chmod 755 /etc/init.d/S01beepykbd
+
+
+# update init.d file with header info so we can load it on boot can be copied as one big block from sed down to S01beepykbd
+
+sed -i '2 i\### BEGIN INIT INFO\
+# Provides:          S01beepykbd\
+# Required-Start:    $all\
+# Required-Stop:\
+# Default-Start:     2 3 4 5\
+# Default-Stop:\
+# Short-Description: Loads Beepy Keymap...\
+### END INIT INFO' /etc/init.d/S01beepykbd
+
+
+# loads the new service file
+
+systemctl daemon-reload
+
+
+# start it - you can test it working now on the beepy
+
+systemctl start S01beepykbd
+
+
+# enable so it loads on boot
+
+systemctl enable S01beepykbd
