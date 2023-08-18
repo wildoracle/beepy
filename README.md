@@ -3,8 +3,8 @@ Personal build files and docs for https://beepy.sqfmi.com/docs/getting-started
 
 
 ----------------------------------------------------------------
-Software Setup
-Use the Raspberry Pi Imager tool to flash an SD card with the latest Raspberry Pi OS image
+<h1>Software Setup</h1>
+<h2>Use the Raspberry Pi Imager tool to flash an SD card with the latest Raspberry Pi OS image</h2>
 
 Choose the Raspberry Pi OS Lite (32-bit) image
 Click the gear icon ⚙ to also setup WiFi and enable SSH
@@ -19,7 +19,7 @@ After reboot, SSH into the Pi again and run this customized setup script that lo
 `curl -s https://raw.githubusercontent.com/wildoracle/beepy/main/setup.sh | bash`
 
 ----------------------------------------------------------------
-Steps to copy keymap to shared location:
+<h2>Steps to copy keymap to shared location:</h2>
 
 `sudo -i`
 
@@ -64,7 +64,7 @@ Enable so it loads on boot
 `systemctl enable S01beepykbd`
 
 ----------------------------------------------------------------
-Steps to compile new firmware from git:
+<h2>Steps to compile new firmware from git:</h2>
 (via SSH to beepy)
 
 `sudo apt-get install gcc-arm-none-eabi`
@@ -97,10 +97,23 @@ Resulting firmware file will be located:
 `~/beepberry-rp2040/build/app/i2c_puppet.uf2`
 
 ----------------------------------------------------------------
-Firmware Update
+<h2>Firmware Update</h2>
 To update the Beepy's firmware:
 
 Slide the power switch off (left if facing up)
 Connect the Beepy to your computer via USB-C
 While holding the "End Call" key (top right on the keypad), slide the power switch on
 The Beepy will present itself as a USB mass storage device, drag'n'drop the new firmware (*.uf2) into the drive and it will reboot with the new firmware.
+
+-----------------------------------------------------------------
+<h2>Reload keymap</h2>
+To reload the keymap:
+I'll assume you've followed the guide and installed it to 
+
+`/usr/share/keymaps/beepy-kbd.map`
+
+if that is the case try this 
+
+`sudo loadkeys /usr/share/keymaps/beepy-kbd.map`
+
+this will manually load the keymap, fixing your alt and sym keys
