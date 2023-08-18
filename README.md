@@ -133,3 +133,24 @@ this will manually load the keymap, fixing your alt and sym keys
  *	+------------+----+-------------------+-----+-------------+
  *
 ```
+-----------------------------------------------------------------
+
+<h2>Apps and Tools</h2>
+
+[Install fbterm](https://gist.github.com/charlestsai1995/54ab65a87e2e063ea25eb3aec4193fe1) for a terminal with better font options - but currently working out issues with the way it functions with keyboard and display
+
+[Install cmatrix](https://www.linuxfordevices.com/tutorials/linux/install-cmatrix) for an appropriate "screensaver"!
+
+[Install googler](https://lindevs.com/install-googler-on-raspberry-pi/) 
+```
+GOOGLER_VERSION=$(curl -s "https://api.github.com/repos/jarun/googler/releases/latest" | grep -Po '"tag_name": "v\K[0-9.]+')
+sudo curl -o /usr/local/bin/googler "https://raw.githubusercontent.com/jarun/googler/v${GOOGLER_VERSION}/googler"
+sudo chmod a+x /usr/local/bin/googler
+```
+Check the installed version
+```
+googler --version
+```
+Testing Googler
+Execute the `googler` command without any arguments.
+Googler will prompt you for a search term. Type something and press Enter key. It will print search results. Press CTRL+C to quit Googler.
