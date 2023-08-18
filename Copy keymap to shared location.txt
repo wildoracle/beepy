@@ -24,6 +24,7 @@ chmod 755 /etc/init.d/S01beepykbd
 
 
 # update init.d file with header info so we can load it on boot can be copied as one big block from sed down to S01beepykbd
+# COPY THE FOLLOWING BLOCK from "sed..." through ".../etc/init.d/S01beepykbd"
 
 sed -i '2 i\### BEGIN INIT INFO\
 # Provides:          S01beepykbd\
@@ -34,16 +35,13 @@ sed -i '2 i\### BEGIN INIT INFO\
 # Short-Description: Loads Beepy Keymap...\
 ### END INIT INFO' /etc/init.d/S01beepykbd
 
-
 # loads the new service file
 
 systemctl daemon-reload
 
-
 # start it - you can test it working now on the beepy
 
 systemctl start S01beepykbd
-
 
 # enable so it loads on boot
 
