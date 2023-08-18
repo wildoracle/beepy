@@ -40,6 +40,7 @@ Copy init.d file
 `chmod 755 /etc/init.d/S01beepykbd`
 
 Update init.d file with header info so we can load it on boot
+COPY THE FOLLOWING BLOCK:
 
 `sed -i '2 i\### BEGIN INIT INFO\`
 `# Provides:          S01beepykbd\`
