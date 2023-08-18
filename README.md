@@ -27,8 +27,6 @@ Steps to compile new firmware from git:
 
 `cd build`
 
-# `cmake -DPICO_BOARD=beepy ../`
-
 `cmake -DPICO_BOARD=beepberry -DCMAKE_BUILD_TYPE=Debug ..`
 
 `make`
