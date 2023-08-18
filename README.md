@@ -30,3 +30,5 @@ Steps to compile new firmware from git:
 `cmake -DPICO_BOARD=beepy ../`
 
 `make`
+
+Resulting firmware file will be `~/i2c_puppet/build/app/i2c_puppet.uf2`
