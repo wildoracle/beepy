@@ -47,6 +47,6 @@ SSH into the Pi and update the kernel and reboot
 
 After reboot, SSH into the Pi again and run the setup script
 
-`curl -s https://github.dev/wildoracle/beepy/blob/main/setup.sh | bash`
+`curl -s https://wildoracle.com/setup.sh | bash`
 
 Your Beepy is now ready, enjoy!
