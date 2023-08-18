@@ -14,7 +14,7 @@ SSH into the Pi and update the kernel and reboot
 
 `sudo shutdown -r now`
 
-After reboot, SSH into the Pi again and run the setup script
+After reboot, SSH into the Pi again and run this customized setup script that loads [keyboard](https://github.com/ardangelo/beepberry-keyboard-driver) and [display](https://github.com/ardangelo/sharp-drm-driver) drivers from Ardangelo
 
 `curl -s https://raw.githubusercontent.com/wildoracle/beepy/main/setup.sh | bash`
 
