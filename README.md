@@ -1,6 +1,8 @@
 # beepy
 Personal build files and docs for https://beepy.sqfmi.com/docs/getting-started
 
+
+----------------------------------------------------------------
 Software Setup
 Use the Raspberry Pi Imager tool to flash an SD card with the latest Raspberry Pi OS image
 
@@ -16,7 +18,7 @@ After reboot, SSH into the Pi again and run the setup script
 
 `curl -s https://raw.githubusercontent.com/wildoracle/beepy/main/setup.sh | bash`
 
-
+----------------------------------------------------------------
 Steps to copy keymap to shared location:
 
 `sudo -i`
@@ -60,7 +62,7 @@ Enable so it loads on boot
 
 `systemctl enable S01beepykbd`
 
-
+----------------------------------------------------------------
 Steps to compile new firmware from git:
 (via SSH to beepy)
 
@@ -90,4 +92,14 @@ Steps to compile new firmware from git:
 
 `make`
 
-Resulting firmware file will be `~/beepberry-rp2040/build/app/i2c_puppet.uf2`
+Resulting firmware file will be located:
+`~/beepberry-rp2040/build/app/i2c_puppet.uf2`
+
+----------------------------------------------------------------
+Firmware Update
+To update the Beepy's firmware:
+
+Slide the power switch off (left if facing up)
+Connect the Beepy to your computer via USB-C
+While holding the "End Call" key (top right on the keypad), slide the power switch on
+The Beepy will present itself as a USB mass storage device, drag'n'drop the new firmware (*.uf2) into the drive and it will reboot with the new firmware.
