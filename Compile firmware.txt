@@ -1,0 +1,18 @@
+Steps to compile new firmware from git: (via SSH to beepy)
+
+sudo apt-get install gcc-arm-none-eabi
+sudo apt-get install binutils-arm-none-eabi cmake
+sudo apt-get install git
+git clone https://github.com/ardangelo/beepberry-rp2040
+cd beepberry-rp2040
+git submodule update --init
+cd 3rdparty/pico-sdk
+git submodule update --init
+cd ../../
+mkdir build
+cd build
+cmake -DPICO_BOARD=beepberry -DCMAKE_BUILD_TYPE=Debug ..
+make
+
+The resulting firmware file will be at:
+~/beepberry-rp2040/build/app/i2c_puppet.uf2
