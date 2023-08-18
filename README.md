@@ -31,7 +31,7 @@ Steps to compile new firmware from git:
 
 `make`
 
-Resulting firmware file will be `~/i2c_puppet/build/app/i2c_puppet.uf2`
+Resulting firmware file will be `~/beepberry-rp2040/build/app/i2c_puppet.uf2`
 
 
 Software Setup
