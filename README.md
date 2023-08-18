@@ -13,7 +13,7 @@ Steps to compile new firmware from git:
 
 `git clone https://github.com/ardangelo/beepberry-rp2040`
 
-`cd i2c_puppet`
+`cd beepberry-rp2040`
 
 `git submodule update --init`
 
