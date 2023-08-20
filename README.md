@@ -13,6 +13,41 @@ SSH into the Pi and update the kernel and reboot
 sudo apt-get update && sudo apt-get install raspberrypi-kernel
 sudo shutdown -r now
 ```
+
+----------------------------------------------------------------
+<h1>Removing/cleaning old source builds of drivers</h1>
+If you already ran the "official" process and installed those drivers, and you don't want to start over with a fresh SD flash of the system, you can perform the following steps to remove the old drivers first before you proceed with installing the Ardangelo drivers.
+
+If you have not installed previous versions of the drivers from source, disregard this section.
+
+The `bbqX0kbd` driver has been renamed to `beepy-kbd`, and `sharp` to `sharp-drm`.
+
+Driver packages in the Driver install options further down this page will detect if one of these old modules is installed and cancel installation of the package.
+
+1. Remove the following files:
+```
+/lib/modules/<uname>/extra/bbqX0kbd.ko*
+/lib/modules/<uname>/extra/sharp.ko*
+/boot/overlays/i2c-bbqX0kbd.dtbo
+/boot/overlays/sharp.dtbo
+```
+
+2. Rebuild the module list:
+```
+depmod -a
+```
+
+3. Remove the following lines from `/boot/config.txt`:
+```
+dtoverlay=bbqX0kbd,irq_pin=4
+dtoverlay=sharp
+```
+
+4. Remove the following lines from `/etc/modules`:
+```
+bbqX0kbd
+sharp
+```
 ----------------------------------------------------------------
 <h2>Now you can either compile the firmware yourself or download from this repository</h2>
 <h3>Steps to compile new firmware from git:</h3>
@@ -47,13 +82,31 @@ While holding the "End Call" key (top right on the keypad), slide the power swit
 The Beepy will present itself as a USB mass storage device, drag'n'drop the new firmware (*.uf2) into the drive and it will reboot with the new firmware.
 
 -----------------------------------------------------------------
-<h2>Driver Install</h2>
+<h2>Driver Install, method 1</h2>
 
 After reboot, SSH into the Pi again and run this customized setup script that loads [keyboard](https://github.com/ardangelo/beepberry-keyboard-driver) and [display](https://github.com/ardangelo/sharp-drm-driver) drivers from Ardangelo
 ```
 curl -s https://raw.githubusercontent.com/wildoracle/beepy/main/setup.sh | bash
 ```
 You should now see `beepberry-keyboard-driver` and `sharp-drm-driver` when you type `ls`
+
+----------------------------------------------------------------
+<h2>Driver Install, method 2</h2>
+
+After reboot, SSH into the Pi again and run these commands to add the Ardangelo repository to APT and install the drivers:
+```
+curl -s --compressed "https://ardangelo.github.io/beepy-ppa/KEY.gpg" | gpg --dearmor | sudo tee /etc/apt/trusted.gpg.d/beepy.gpg >/dev/null
+sudo curl -s --compressed -o /etc/apt/sources.list.d/beepy.list "https://ardangelo.github.io/beepy-ppa/beepy.list"
+sudo apt update
+sudo apt-get -y install beepy-kbd sharp-drm
+```
+You should now see `beepberry-keyboard-driver` and `sharp-drm-driver` when you type `ls`
+
+The keyboard and firmware driver package will run a preinstall check to ensure that the Beepy firmware is compatible with the driver.
+
+If the installed firmware is detected as incompatible, the installation will be canceled.
+
+A link to a compatible firmware release will be output as part of the error message.
 
 ----------------------------------------------------------------
 <h1>These remaining steps are to troubleshoot and fix common problems</h1>
