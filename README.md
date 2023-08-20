@@ -118,10 +118,12 @@ Is your keyboard still not working right?
 These commands might help...
 
 Reinstall linux headers?
+
 `sudo apt-get install linux-headers`
 
 Need to see what the keycode is for any key?
-type `showkeys` then press a key
+
+Type `showkeys` then press a key
 
 -----------------------------------------------------------------
 <h2>Previous driver layout reference</h2>
