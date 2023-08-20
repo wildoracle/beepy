@@ -23,9 +23,13 @@ If you already ran the "official" process and installed those drivers, and you d
 
 If you have not installed previous versions of the drivers from source, disregard this section.
 
-The `bbqX0kbd` driver has been renamed to `beepy-kbd`, and `sharp` to `sharp-drm`.
+<h4>Driver packages in the Driver install options further down this page will detect if one of these old modules is installed and cancel installation of the package.</h4>
+<h4>The `bbqX0kbd` driver has been renamed to `beepy-kbd`, and `sharp` to `sharp-drm` - with a note from the developer:</h4>
+"I renamed `bbqX0kbd` to `beepy-kbd` because: 1) the driver is heavily customized for Beepy and 2) The Debian DKMS system does not allow capital X in driver package names. 
+I renamed `sharp` to `sharp-drm` because it diverged heavily from the original `sharp` driver, I rewrote it entirely to use the Linux DRM system.
+And as a side effect, this allows the driver packages to check for any previous source installs of the drivers. There are a lot of people here with drivers built from source and having the old versions lying around can eventually be an issue for the firmware and software updates."
 
-Driver packages in the Driver install options further down this page will detect if one of these old modules is installed and cancel installation of the package.
+--------------------------------------------------------------
 
 1. Remove the following files:
 ```
@@ -115,8 +119,8 @@ curl -s https://raw.githubusercontent.com/wildoracle/beepy/main/setup.sh | bash
 You should now see `beepberry-keyboard-driver` and `sharp-drm-driver` when you type `ls`
 
 ----------------------------------------------------------------
-<h1>These remaining steps are to troubleshoot and fix common problems</h1>
-<h2>Steps to copy keymap to shared location:</h2>
+<h2>These remaining steps are to troubleshoot and fix common problems</h2>
+<h3>Steps to copy keymap to shared location:</h3>
 
 ```
 sudo -i
@@ -158,7 +162,7 @@ systemctl enable S01beepykbd
 ```
 
 -----------------------------------------------------------------
-<h2>Reload keymap</h2>
+<h3>Reload keymap</h3>
 To reload the keymap:
 I'll assume you've followed the guide and installed it to 
 
