@@ -15,7 +15,7 @@ sudo shutdown -r now
 ```
 
 ----------------------------------------------------------------
-<h1>Removing/cleaning old source builds of drivers</h1>
+<h3>Removing/cleaning old source builds of drivers</h3>
 If you already ran the "official" process and installed those drivers, and you don't want to start over with a fresh SD flash of the system, you can perform the following steps to remove the old drivers first before you proceed with installing the Ardangelo drivers.
 
 If you have not installed previous versions of the drivers from source, disregard this section.
@@ -74,7 +74,7 @@ Resulting firmware file will be located:
 
 ----------------------------------------------------------------
 <h2>Firmware Update</h2>
-To update the Beepy's firmware:
+<h3>To update the Beepy's firmware:</h3>
 
 Slide the power switch off (left if facing up)
 Connect the Beepy to your computer via USB-C
