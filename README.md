@@ -1,5 +1,5 @@
 <h1>Give your Beepy a fresh start!</h1>
-<h3>Step 1: DON'T follow the official steps in the link below, but instead take the steps I'm sharing here to install Ardangelo aka Excel's drivers and firmware using my custom script.</h3>
+<h3>DON'T follow the "official" steps in the link below, but instead take the steps I'm sharing here to install Ardangelo aka Excel's drivers and firmware using my custom script.</h3>
 This started as a personal log of what build files worked and documentation for the https://beepy.sqfmi.com/docs/getting-started
 
 ----------------------------------------------------------------
@@ -38,7 +38,6 @@ Resulting firmware file will be located:
 (or you can download my [`ic2_puppet.uf2`](https://github.com/wildoracle/beepy/raw/main/i2c_puppet.uf2) file from this repository)
 
 ----------------------------------------------------------------
-
 <h2>Firmware Update</h2>
 To update the Beepy's firmware:
 
@@ -47,8 +46,8 @@ Connect the Beepy to your computer via USB-C
 While holding the "End Call" key (top right on the keypad), slide the power switch on
 The Beepy will present itself as a USB mass storage device, drag'n'drop the new firmware (*.uf2) into the drive and it will reboot with the new firmware.
 
-<h2>Driver Install</h2>
 -----------------------------------------------------------------
+<h2>Driver Install</h2>
 
 After reboot, SSH into the Pi again and run this customized setup script that loads [keyboard](https://github.com/ardangelo/beepberry-keyboard-driver) and [display](https://github.com/ardangelo/sharp-drm-driver) drivers from Ardangelo
 ```
@@ -113,7 +112,8 @@ this will manually load the keymap, fixing your alt and sym keys
 
 -----------------------------------------------------------------
 <h2>But wait... there's more!</h2>
-These commands might help refresh things, who knows?
+Is your keyboard still not working right?
+These commands might help?
 
 `sudo apt-get install linux-headers`
 
