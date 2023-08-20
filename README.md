@@ -41,7 +41,7 @@ make
 Resulting firmware file will be located:
 `~/beepberry-rp2040/build/app/i2c_puppet.uf2`
 
-(or you can download my `ic2_puppet.uf2` file from this repository)
+(or you can download my [`ic2_puppet.uf2`](https://github.com/wildoracle/beepy/raw/main/i2c_puppet.uf2) file from this repository)
 
 ----------------------------------------------------------------
 <h2>Firmware Update</h2>
