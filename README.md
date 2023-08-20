@@ -103,6 +103,12 @@ if that is the case try this
 this will manually load the keymap, fixing your alt and sym keys
 
 -----------------------------------------------------------------
+<h2>But wait... there's more!</h2>
+These commands might help refresh things, who knows?
+
+`sudo apt-get install linux-headers`
+
+-----------------------------------------------------------------
 <h2>Previous driver layout</h2>
 
 ```
