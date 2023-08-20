@@ -13,14 +13,9 @@ SSH into the Pi and update the kernel and reboot
 sudo apt-get update && sudo apt-get install raspberrypi-kernel
 sudo shutdown -r now
 ```
-After reboot, SSH into the Pi again and run this customized setup script that loads [keyboard](https://github.com/ardangelo/beepberry-keyboard-driver) and [display](https://github.com/ardangelo/sharp-drm-driver) drivers from Ardangelo
-```
-curl -s https://raw.githubusercontent.com/wildoracle/beepy/main/setup.sh | bash
-```
-You should now see `beepberry-keyboard-driver` and `sharp-drm-driver` when you type `ls`
-
 ----------------------------------------------------------------
-<h2>Steps to compile new firmware from git:</h2>
+<h2>Now you can either compile the firmware yourself or download from this repository</h2>
+<h3>Steps to compile new firmware from git:</h3>
 (via SSH to beepy or another Raspberry Pi)
 
 ```
@@ -37,13 +32,13 @@ cd build
 cmake -DPICO_BOARD=beepberry -DCMAKE_BUILD_TYPE=Debug ..
 make
 ```
-
 Resulting firmware file will be located:
 `~/beepberry-rp2040/build/app/i2c_puppet.uf2`
 
 (or you can download my [`ic2_puppet.uf2`](https://github.com/wildoracle/beepy/raw/main/i2c_puppet.uf2) file from this repository)
 
 ----------------------------------------------------------------
+
 <h2>Firmware Update</h2>
 To update the Beepy's firmware:
 
@@ -51,6 +46,15 @@ Slide the power switch off (left if facing up)
 Connect the Beepy to your computer via USB-C
 While holding the "End Call" key (top right on the keypad), slide the power switch on
 The Beepy will present itself as a USB mass storage device, drag'n'drop the new firmware (*.uf2) into the drive and it will reboot with the new firmware.
+
+<h2>Driver Install</h2>
+-----------------------------------------------------------------
+
+After reboot, SSH into the Pi again and run this customized setup script that loads [keyboard](https://github.com/ardangelo/beepberry-keyboard-driver) and [display](https://github.com/ardangelo/sharp-drm-driver) drivers from Ardangelo
+```
+curl -s https://raw.githubusercontent.com/wildoracle/beepy/main/setup.sh | bash
+```
+You should now see `beepberry-keyboard-driver` and `sharp-drm-driver` when you type `ls`
 
 ----------------------------------------------------------------
 <h2>Steps to copy keymap to shared location:</h2>
