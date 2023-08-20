@@ -116,7 +116,7 @@ this will manually load the keymap, fixing your alt and sym keys
 
 Is your keyboard still not working right?
 
-These commands might help?
+These commands might help...
 
 `sudo apt-get install linux-headers`
 
