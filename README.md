@@ -1,9 +1,10 @@
-# beepy
-Personal build files and docs for https://beepy.sqfmi.com/docs/getting-started
+<h1>Give your Beepy a fresh start!</h1>
+<h3>Step 1: DON'T follow the official steps in the link below, but instead take the steps I'm sharing here to install Ardangelo aka Excel's drivers and firmware using my custom script.</h3>
+This started as a personal log of what build files worked and documentation for the https://beepy.sqfmi.com/docs/getting-started
 
 ----------------------------------------------------------------
 <h1>Software Setup</h1>
-<h2>Use the Raspberry Pi Imager tool to flash an SD card with the latest Raspberry Pi OS image</h2>
+<h3>Use the Raspberry Pi Imager tool to flash an SD card with the latest Raspberry Pi OS image</h3>
 
 Choose the Raspberry Pi OS Lite (32-bit) image
 Click the gear icon ⚙ to also setup WiFi and enable SSH
@@ -16,6 +17,8 @@ After reboot, SSH into the Pi again and run this customized setup script that lo
 ```
 curl -s https://raw.githubusercontent.com/wildoracle/beepy/main/setup.sh | bash
 ```
+You should now see `beepberry-keyboard-driver` and `sharp-drm-driver` when you type `ls`
+
 ----------------------------------------------------------------
 <h2>Steps to compile new firmware from git:</h2>
 (via SSH to beepy or another Raspberry Pi)
@@ -37,6 +40,8 @@ make
 
 Resulting firmware file will be located:
 `~/beepberry-rp2040/build/app/i2c_puppet.uf2`
+
+(or you can download my `ic2_puppet.uf2` file from this repository)
 
 ----------------------------------------------------------------
 <h2>Firmware Update</h2>
