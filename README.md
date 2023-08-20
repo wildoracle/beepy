@@ -115,13 +115,16 @@ this will manually load the keymap, fixing your alt and sym keys
 <h2>But wait... there's more!</h2>
 
 Is your keyboard still not working right?
-
 These commands might help...
 
+Reinstall linux headers?
 `sudo apt-get install linux-headers`
 
+Need to see what the keycode is for any key?
+type `showkeys` then press a key
+
 -----------------------------------------------------------------
-<h2>Previous driver layout</h2>
+<h2>Previous driver layout reference</h2>
 
 ```
  *	               BBQ20KBD PMOD KEYBOARD LAYOUT
