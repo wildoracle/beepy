@@ -56,6 +56,7 @@ curl -s https://raw.githubusercontent.com/wildoracle/beepy/main/setup.sh | bash
 You should now see `beepberry-keyboard-driver` and `sharp-drm-driver` when you type `ls`
 
 ----------------------------------------------------------------
+<h1>These remaining steps are to troubleshoot and fix common problems</h1>
 <h2>Steps to copy keymap to shared location:</h2>
 
 ```
