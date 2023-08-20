@@ -1,6 +1,9 @@
 <h1>Give your Beepy a fresh start!</h1>
 <h3>DON'T follow the "official" steps in the link below, but instead take the steps I'm sharing here to install Ardangelo aka Excel's drivers and firmware using my custom script.</h3>
-This started as a personal log of what build files worked and documentation for the https://beepy.sqfmi.com/docs/getting-started
+
+This started as a personal log of what build files worked and documentation for the [Beepy](https://beepy.sqfmi.com/)
+
+But then developed into little more than a "guide for dummies" version of [the Ardangelo method](https://ardangelo.github.io/beepy-ppa/)
 
 ----------------------------------------------------------------
 <h1>Software Setup</h1>
@@ -81,17 +84,9 @@ Connect the Beepy to your computer via USB-C
 While holding the "End Call" key (top right on the keypad), slide the power switch on
 The Beepy will present itself as a USB mass storage device, drag'n'drop the new firmware (*.uf2) into the drive and it will reboot with the new firmware.
 
------------------------------------------------------------------
-<h2>Driver Install, method 1</h2>
-
-After reboot, SSH into the Pi again and run this customized setup script that loads [keyboard](https://github.com/ardangelo/beepberry-keyboard-driver) and [display](https://github.com/ardangelo/sharp-drm-driver) drivers from Ardangelo
-```
-curl -s https://raw.githubusercontent.com/wildoracle/beepy/main/setup.sh | bash
-```
-You should now see `beepberry-keyboard-driver` and `sharp-drm-driver` when you type `ls`
-
 ----------------------------------------------------------------
-<h2>Driver Install, method 2</h2>
+<h2>Driver Install, preferred method</h2>
+(From https://ardangelo.github.io/beepy-ppa/)
 
 After reboot, SSH into the Pi again and run these commands to add the Ardangelo repository to APT and install the drivers:
 ```
@@ -107,6 +102,17 @@ The keyboard and firmware driver package will run a preinstall check to ensure t
 If the installed firmware is detected as incompatible, the installation will be canceled.
 
 A link to a compatible firmware release will be output as part of the error message.
+
+-----------------------------------------------------------------
+<h2>Driver Install, backup method</h2>
+
+Alternatively, you can try the following process which is a custom version of the official setup script from SQFMI.
+
+After reboot, SSH into the Pi again and run this customized setup script that loads [keyboard](https://github.com/ardangelo/beepberry-keyboard-driver) and [display](https://github.com/ardangelo/sharp-drm-driver) drivers from Ardangelo
+```
+curl -s https://raw.githubusercontent.com/wildoracle/beepy/main/setup.sh | bash
+```
+You should now see `beepberry-keyboard-driver` and `sharp-drm-driver` when you type `ls`
 
 ----------------------------------------------------------------
 <h1>These remaining steps are to troubleshoot and fix common problems</h1>
