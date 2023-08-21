@@ -1,5 +1,5 @@
 <h1>Give your Beepy a fresh start!</h1>
-<h3>The "official" steps will load an earlier version of the drivers and firmware, but instead you can take the steps I'm sharing here to install Ardangelo aka Excel's drivers and firmware using my custom script.</h3>
+<h3>The "official" steps will load an earlier version of the drivers and firmware, but instead you can take the steps I'm sharing here to install Ardangelo aka Excel's drivers and firmware using 1) their install process or 2) my custom script.</h3>
 
 This started as a personal log of what build files worked and documentation for the [Beepy](https://beepy.sqfmi.com/)
 
