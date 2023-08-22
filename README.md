@@ -223,6 +223,8 @@ Type `showkeys` then press a key
 
 <h2>Apps and Tools</h2>
 
+Turn the [keyboard backlight on while typing](https://gist.github.com/arrjay/dded4a53d1c40551e25bbb6ce17d808f)!
+
 [Install fbterm](https://gist.github.com/charlestsai1995/54ab65a87e2e063ea25eb3aec4193fe1) for a terminal with better font options - but currently working out issues with the way it functions with keyboard and display
 
 [Install cmatrix](https://www.linuxfordevices.com/tutorials/linux/install-cmatrix) for an appropriate "screensaver"!
