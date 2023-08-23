@@ -174,6 +174,13 @@ if that is the case try this
 
 this will manually load the keymap, fixing your alt and sym keys
 
+After you update keyboard map, make sure you run
+```
+rm -f /etc/console-setup/cached_setup_keyboard.sh
+dpkg-reconfigure keyboard-configuration
+```
+before rebooting so that it’s loaded by default
+
 -----------------------------------------------------------------
 <h2>But wait... there's more!</h2>
 
