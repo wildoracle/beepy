@@ -9,8 +9,8 @@ But then developed into little more than a "guide for dummies" version of [the A
 <h1>Software Setup</h1>
 <h3>Use the Raspberry Pi Imager tool to flash an SD card with the latest Raspberry Pi OS image</h3>
 
-Choose the Raspberry Pi OS Lite (32-bit) image
-Click the gear icon ⚙ to also setup WiFi and enable SSH
+Choose the Raspberry Pi OS Lite (32-bit) image\
+Click the gear icon ⚙ to also setup WiFi and enable SSH\
 SSH into the Pi and update the kernel and reboot
 ```
 sudo apt-get update && sudo apt-get install raspberrypi-kernel
@@ -25,7 +25,7 @@ If you have not installed previous versions of the drivers from source, disregar
 
 <h4>Driver packages in the Driver install options further down this page will detect if one of these old modules is installed and cancel installation of the package.</h4>
 <h4>The `bbqX0kbd` driver has been renamed to `beepy-kbd`, and `sharp` to `sharp-drm` - with a note from the developer:</h4>
-"I renamed `bbqX0kbd` to `beepy-kbd` because: 1) the driver is heavily customized for Beepy and 2) The Debian DKMS system does not allow capital X in driver package names. 
+"I renamed `bbqX0kbd` to `beepy-kbd` because: 1) the driver is heavily customized for Beepy and 2) The Debian DKMS system does not allow capital X in driver package names.\
 I renamed `sharp` to `sharp-drm` because it diverged heavily from the original `sharp` driver, I rewrote it entirely to use the Linux DRM system.
 And as a side effect, this allows the driver packages to check for any previous source installs of the drivers. There are a lot of people here with drivers built from source and having the old versions lying around can eventually be an issue for the firmware and software updates."
 
@@ -74,7 +74,7 @@ cd build
 cmake -DPICO_BOARD=beepberry -DCMAKE_BUILD_TYPE=Debug ..
 make
 ```
-Resulting firmware file will be located:
+Resulting firmware file will be located at:\
 `~/beepberry-rp2040/build/app/i2c_puppet.uf2`
 
 (or you can download my [`ic2_puppet.uf2`](https://github.com/wildoracle/beepy/raw/main/i2c_puppet.uf2) file from this repository)
@@ -83,9 +83,9 @@ Resulting firmware file will be located:
 <h2>Firmware Update</h2>
 <h3>To update the Beepy's firmware:</h3>
 
-Slide the power switch off (left if facing up)
-Connect the Beepy to your computer via USB-C
-While holding the "End Call" key (top right on the keypad), slide the power switch on
+Slide the power switch off (left if facing up)\
+Connect the Beepy to your computer via USB-C\
+While holding the "End Call" key (top right on the keypad), slide the power switch on\
 The Beepy will present itself as a USB mass storage device, drag'n'drop the new firmware (*.uf2) into the drive and it will reboot with the new firmware.
 
 ----------------------------------------------------------------
@@ -163,7 +163,7 @@ systemctl enable S01beepykbd
 
 -----------------------------------------------------------------
 <h3>Reload keymap</h3>
-To reload the keymap:
+To reload the keymap:\
 I'll assume you've followed the guide and installed it to 
 
 `/usr/share/keymaps/beepy-kbd.map`
@@ -184,7 +184,7 @@ before rebooting so that it’s loaded by default
 -----------------------------------------------------------------
 <h2>But wait... there's more!</h2>
 
-Is your keyboard still not working right?
+Is your keyboard still not working right?\
 These commands might help...
 
 Reinstall linux headers?
